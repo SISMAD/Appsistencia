@@ -6,10 +6,7 @@
 <main class="mdl-layout__content">
 
 <body>
-    <div class="mdl-layout mdl-layout--fixed-heade
-    
-    
-    r mdl-js-layout mdl-color--grey-100">
+    <div class="mdl-layout mdl-layout--fixed-header mdl-js-layout mdl-color--grey-100">
       <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--grey-100 mdl-color-text--grey-800">
         <div class="mdl-layout__header-row">
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
