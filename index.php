@@ -1,18 +1,45 @@
-<!DOCTYPE HTML>
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
-<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-<main class="mdl-layout__content">
-
-<body>
-    <div class="mdl-layout mdl-layout--fixed-header mdl-js-layout mdl-color--grey-100">
-      <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--grey-100 mdl-color-text--grey-800">
-        <div class="mdl-layout__header-row">
-          <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
-            <label class="mdl-button mdl-js-button mdl-button--icon" for="search">
-              <i class="material-icons">search</i>
-            </label>
-          </div>
-        </div>
-      </header>
+<html lang="es" class="mdl-js">
+    <head>
+            <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="Appsistencia" content="Control de asistencia de las tutorias de los docentes">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+            <link rel="stylesheet" href="css/mdl/material.min.css">
+            <script src="css/mdl/material.min.js"></script>
+            <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <title>Appsistencia</title>
+    </head>
+    <body>
+        <section>
+            <form action="login.php" method="post">
+                    <table align="center">
+                            <tr align="right">
+                                <td align="right">
+                                        <img src="images/user.png" width="180" height="180">
+                                </td>
+                            </tr>
+                    </table>
+                        <STYLE type="text/css">
+                        div.parrafos {text-align: center}
+                       </STYLE>
+                    <table align="center">
+                      <h2 align="center">APPSISTENCIA</h2>
+                        <div class="parrafos">
+                            <br></br>
+                            <input type="num" name="codigo" placeholder="Codigo" title="Ej. 4150510000" required autofocus>
+                          <br></br>
+                           <input type="password" name="password" placeholder="Contraseña" title="Digita una contraseña" required>
+                           <br></br>
+                          <a href="registro.php" title="Registrar">
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" title="Registrarse">
+                                Registrarse
+                            </button>
+                        </a>
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" type="submit" title="Ingresar">Conectarse</button>
+                            <h5><a href="#" id="signup">¿Olvidaste contraseña?</a></h5>
+                                </div>
+                            </table>
+                            </form>                      
+        </section>
+    </body>
+</html>
