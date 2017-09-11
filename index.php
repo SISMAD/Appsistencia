@@ -36,7 +36,7 @@
                             </button>
                         </a>
                             <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" type="submit" title="Ingresar">Conectarse</button>
-                            <h5><a href="#" id="signup">¿Olvidaste contraseña?</a></h5>
+                            <h5><a href="#">¿Olvidaste contraseña?</a></h5>
                                 </div>
                             </table>
                             </form>                      
