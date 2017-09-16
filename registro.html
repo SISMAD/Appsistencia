@@ -1,89 +1,77 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+	<meta charset="utf-8">
+	
 	<!-- Compiled and minified CSS -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+  	<!-- Compiled and minified JavaScript -->
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+          
+  	<!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <script
+  		src="https://code.jquery.com/jquery-3.2.1.min.js"
+  		integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  		crossorigin="anonymous">
+	</script>
 	
-	  <!-- Compiled and minified JavaScript -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-			  
-	  <!--Import Google Icon Font-->
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	
-	<script src="https://code.jquery.com/jquery-3.2.1.min.js" 
-		integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" 
-		crossorigin="anonymous"></script>
-	<meta charset="utf-8">
-	<title>Registro de Estudiante</title>
+	<title>Registro de Estudiantes</title>
+
 </head>
 
 <body>
+
+
 <div class="container">
 
-	<h3>Registrar estudiante</h3>
+	
+
+	<div class="card-panel s2">
 	<div class="row">
-		<div class="input-field col s6">
-	          <i class="material-icons prefix">account_circle</i>
-	          <input id="Primer" type="text" class="validate">
-	          <label for="Primer" class="active">Primer nombre</label>
+		<h3 class="center-align">Registrar estudiante</h3>
+		<div class="input-field">
+	          <input id="Primer" type="text" class="validate" placeholder="Primer Nombre">
+	          
 	    </div>
 
-	    <div class="input-field col s6">
-	          <i class="material-icons prefix">account_circle</i>
-	          <input id="Segundo" type="text" class="validate">
-	          <label for="Segundo" class="active">Segundo nombre</label>
+	    <div class="input-field">
+	          <input id="Segundo" type="text" class="validate" placeholder="Segundo Nombre">
 	    </div>
-	</div>
-<div class="row">
-		<div class="input-field col s6">
-			<i class="material-icons prefix">account_circle</i>
-			<input id="papellido" type="Text" id="papellido" type="text" class="validate">
-			<label for="papellido" class="active">Primer apellido</label>
+		
+		<div class="input-field">
+			<input id="papellido" type="Text" id="papellido" type="text" class="validate" placeholder="Primer Apellido">
 		</div>	
 
-	<div class="input-field col s6">
-		<i class="material-icons prefix">account_circle</i>
-		<input id="sapellido" type="Text" id="sapellido" type="text" class="validate">
-		<label for="sapellido" class="active">Segundo apellido</label>
+	<div class="input-field">
+		<input id="sapellido" type="Text" id="sapellido" type="text" class="validate" placeholder="Segundo Apellido">
+		
 	</div>	
 
+		<div class="input-field2">
+		<input id="Segundo" type="text" class="validate" placeholder="Correo">
+	    </div>
 
+		<div class="input-field2">
+			<input id="contrasena" type="text" class="validate" placeholder="Contraseña">
+		    </div>	
 
-	<div class="row">
-		<div class="input-field col s12">
-		<i class="material-icons prefix">email</i>
-		<input id="Segundo" type="text" class="validate">
-	    <label for="Segundo" class="active">E-mail</label>	
-		</div>
-
-	</div>
-
-	<div class="row">
-		<div class="input-field col s12">
-			<i class="material-icons prefix">lock</i>
-			<input id="contrasena" type="text" class="validate">
-		    <label for="contrasena" class="active">contraseña</label>
-		</div>	
-
-	</div>
-
-	<div class="row">
-			<div class="input-field col s12">
-				<i class="material-icons prefix">lock</i>
-				<input id="confirmarc" type="text" class="validate">
-			    <label for="confirmarc" class="active">Confirmar cotraseña</label>
-	        </div>	
-
-    </div>
-
-
-	<div class="row">
-		      <button class="btn waves-effect waves-light col s6 offset-s3" type="submit" name="action">Registrarse
-		    <i class="material-icons right">send</i>
+			<div class="input-field2">
+				<input id="confirmarc" type="text" class="validate" placeholder="Confirmar Contraseña">
+			    </div>	
+    
+			  <button class="btn waves-effect waves-light offset-s3"><i class="large material-icons">arrow_back</i></button>
+				<button class="btn waves-effect waves-light offset-s3" type="submit" name="action">Registrarse
+		    	<i class="material-icons right">send</i>
 		    
 		  </button>
         
 	</div>
+	</div>
+
 
 </body>
 </html>
