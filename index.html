@@ -11,7 +11,7 @@
     </head>
     <body>
         <section>
-            <form action="login.php" method="post">
+            <form action="ValidarLogin.php" method="post">
                     <table align="center">
                             <tr align="right">
                                 <td align="right">
@@ -26,16 +26,18 @@
                       <h2 align="center">APPSISTENCIA</h2>
                         <div class="parrafos">
                             <br></br>
-                            <input type="num" name="codigo" placeholder="Codigo" title="Ej. 4150510000" required autofocus>
+                            <input type="num" name="codigo" pattern="[0-9]{1,15}" required placeholder="Codigo" title="Ej. 4150510000" required autofocus>
                           <br></br>
                            <input type="password" name="password" pattern="[A-Za-z0-9._-]{1,15}" required placeholder="Contraseña" title="Digita una contraseña" required>
                            <br></br>
-                          <a href="registro.html"><input type="button" value="Registrarse" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"></a>
-                            <!-- <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" title="Registrarse"> -->
-                                </button>
+                          <a href="registro.php" title="Registrar">
+                            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" title="Registrarse">
+                                Registrarse
+                            </button>
                         </a>
                             <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" type="submit" name="Enviar" title="Ingresar">Conectarse</button>
                             <h5><a href="#">¿Olvidaste contraseña?</a></h5>
+                                </div>
                             </table>
                             </form>                      
         </section>

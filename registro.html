@@ -28,46 +28,53 @@
 
 <div class="container">
 
-	
-
 	<div class="card-panel s2">
 	<div class="row">
 		<h3 class="center-align">Registrar estudiante</h3>
 		<div class="input-field">
-	          <input id="Primer" type="text" class="validate" placeholder="Primer Nombre">
-	          
-	    </div>
+			
+			<form method="post" name="form_register" action="Registro.php" >
 
-	    <div class="input-field">
-	          <input id="Segundo" type="text" class="validate" placeholder="Segundo Nombre">
-	    </div>
-		
-		<div class="input-field">
-			<input id="papellido" type="Text" id="papellido" type="text" class="validate" placeholder="Primer Apellido">
-		</div>	
+				<div class="input-field">
+		          <input name="codigo" type="number" class="validate" placeholder="Codigo de Estudiante" required>
+		    	</div>
 
-	<div class="input-field">
-		<input id="sapellido" type="Text" id="sapellido" type="text" class="validate" placeholder="Segundo Apellido">
-		
-	</div>	
+		        <input name="nombre1" type="text" class="validate" placeholder="Primer Nombre" required>
+		          
+		    	</div>
 
-		<div class="input-field2">
-		<input id="Segundo" type="text" class="validate" placeholder="Correo">
-	    </div>
+		    	<div class="input-field">
+		          <input name="nombre2" type="text" class="validate" placeholder="Segundo Nombre">
+		    	</div>
+			
+				<div class="input-field">
+				<input name="apellido1" type="Text" type="text" class="validate" placeholder="Primer Apellido" required>
+				</div>	
 
-		<div class="input-field2">
-			<input id="contrasena" type="text" class="validate" placeholder="Contraseña">
-		    </div>	
+				<div class="input-field">
+				<input name="apellido2" type="Text" type="text" class="validate" placeholder="Segundo Apellido">
+			
+				</div>	
 
-			<div class="input-field2">
-				<input id="confirmarc" type="text" class="validate" placeholder="Confirmar Contraseña">
+				<div class="input-field2">
+				<input name="correo" type="email" class="validate" placeholder="Correo" required>
+			    </div>
+
+				<div class="input-field2">
+
+				<input name="password" type="password" class="validate" placeholder="Contraseña" required>
 			    </div>	
-    
-			  <button class="btn waves-effect waves-light offset-s3"><i class="large material-icons">arrow_back</i></button>
-				<button class="btn waves-effect waves-light offset-s3" type="submit" name="action">Registrarse
-		    	<i class="material-icons right">send</i>
+
+				<div class="input-field2">
+					<input name="repassword" type="password" class="validate" placeholder="Confirmar Contraseña" required>
+				    </div>	
+	    
+				  <button class="btn waves-effect waves-light offset-s3"><i class="large material-icons"><a href="/">arrow_back</a></i></button>
+					<button class="btn waves-effect waves-light offset-s3" type="submit" name="action">Registrarse
+			    	<i class="material-icons right">send</i>
 		    
 		  </button>
+		</form>
         
 	</div>
 	</div>
