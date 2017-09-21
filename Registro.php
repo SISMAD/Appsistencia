@@ -49,7 +49,7 @@
                             echo "<script languaje=\"javascript\">alert('ERROR AL EJECUTAR EL REGISTRO');</script>";
                          }else{
                             echo "<script languaje=\"javascript\">alert('REGISTRO EXITOSO');</script>";
-                            echo "<script>document.location.href='index.html';</script>\n";
+                            echo "<script>document.location.href='/appsistencia';</script>\n";
                          }
         	   	         /*mysqli_query($conexion,"CALL registro_personal('$bd_codigo','$bd_nombre1','$bd_nombre2','$bd_apellido1','$bd_apellido2','$bd_email','1')");
         	   	         mysqli_query($conexion,"CALL registro_login('$bd_codigo','$bd_clave')");*/

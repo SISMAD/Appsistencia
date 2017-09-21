@@ -5,7 +5,6 @@
 
     $_codigo=mysqli_real_escape_string($conexion,trim($_POST["codigo"]));
     $_clave=mysqli_real_escape_string($conexion,trim($_POST["password"]));
-    //$_clave=md5($_clave);
     $control=false;
 
     if (empty($_codigo)){
@@ -28,20 +27,18 @@
             	    
             	    $control=true;
             	    if (password_verify($_clave,$pass)) {
-            	    	//header("location: Ejemplo8.html");
-                        echo "PRUEBA SÍ SE OBTUVO RESULTADO <br><br>";    //SE OBTIENE EL VALOR DE LA BBDD
+            	    	echo "PRUEBA SÍ SE OBTUVO RESULTADO <br><br>";    //SE OBTIENE EL VALOR DE LA BBDD
                         echo "La Contraseña de la BBDD es:  $pass<br><br>";
-                        echo "La Contraseña del FORMULARIO es:  $_clave";
+                        
             	    }else{
             	    	echo "<script languaje=\"javascript\">alert('LA CONTRASEÑA ES INCORRECTA');</script>";
-        	            echo "<script>document.location.href='http://localhost/Appsistencia/index.html';</script>\n";
+        	            echo "<script>document.location.href='/appsistencia';</script>\n";
             	    }
 
                 }
 
                 if ($control==false) {
-            	    echo "<script languaje=\"javascript\">alert('NO EXISTE ESTE USUARIO, DEBE REGISTRARSE PARA INGRESAR');</script>";
-                    echo "<script>document.location.href='http://localhost/Software_Registro_Loguin/Index.html';</script>\n";
+            	    echo "<script>document.location.href='UsuarioNoExiste.html';</script>\n";
                 }
         }    
     }

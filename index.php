@@ -11,7 +11,7 @@
     </head>
     <body>
         <section>
-            <form action="login.php" method="post">
+            <form action="ValidarLogin.php" method="post">
                     <table align="center">
                             <tr align="right">
                                 <td align="right">
@@ -25,9 +25,11 @@
                     <table align="center">
                       <h2 align="center">APPSISTENCIA</h2>
                         <div class="parrafos">
+
                             <br></br>
-                            <input type="num" name="codigo" placeholder="Codigo" title="Ej. 4150510000" required autofocus>
-                          <br></br>
+                            <input type="number" name="codigo" pattern="[0-9]{1,15}" placeholder="Codigo" title="Ej. 4150510000" required>
+                            <br></br>
+
                            <input type="password" name="password" pattern="[A-Za-z0-9._-]{1,15}" required placeholder="Contraseña" title="Digita una contraseña" required>
                            <br></br>
                           <a href="registro.html"><input type="button" value="Registrarse" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"></a>
