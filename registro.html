@@ -7,78 +7,78 @@
 	<!-- Compiled and minified CSS -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
 
-  	<!-- Compiled and minified JavaScript -->
-  	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-          
-  	<!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-    <script
-  		src="https://code.jquery.com/jquery-3.2.1.min.js"
-  		integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  		crossorigin="anonymous">
-	</script>
+	<!-- Compiled and minified JavaScript -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 	
-	<title>Registro de Estudiantes</title>
+	<!--Import Google Icon Font-->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	<script
+	src="https://code.jquery.com/jquery-3.2.1.min.js"
+	integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+	crossorigin="anonymous">
+</script>
+
+<title>Registro de Estudiantes</title>
 
 </head>
 
 <body>
 
 
-<div class="container">
+	<div class="container">
 
-	<div class="card-panel s2">
-	<div class="row">
-		<h3 class="center-align">Registrar estudiante</h3>
-		<div class="input-field">
-			
-			<form method="post" name="form_register" action="Registro.php" >
-
+		<div class="card-panel s2">
+			<div class="row">
+				<h3 class="center-align">Registrar estudiante</h3>
 				<div class="input-field">
-		          <input name="codigo" type="number" class="validate" placeholder="Codigo de Estudiante" pattern="[0-9]{1,15}" required>
-		    	</div>
+					
+					<form method="post" name="form_register" action="Registro.php" >
 
-		        <input name="nombre1" type="text" class="validate" placeholder="Primer Nombre" required>
-		          
-		    	</div>
+						<div class="input-field">
+							<input name="codigo" type="number" class="validate" placeholder="Codigo de Estudiante" pattern="[0-9]{1,15}" required>
+						</div>
 
-		    	<div class="input-field">
-		          <input name="nombre2" type="text" class="validate" placeholder="Segundo Nombre">
-		    	</div>
-			
-				<div class="input-field">
-				<input name="apellido1" type="text" class="validate" placeholder="Primer Apellido" required>
-				</div>	
+						<input name="nombre1" type="text" class="validate" placeholder="Primer Nombre" required>
+						
+					</div>
 
-				<div class="input-field">
-				<input name="apellido2" type="text" class="validate" placeholder="Segundo Apellido">
-			
-				</div>	
+					<div class="input-field">
+						<input name="nombre2" type="text" class="validate" placeholder="Segundo Nombre">
+					</div>
+					
+					<div class="input-field">
+						<input name="apellido1" type="text" class="validate" placeholder="Primer Apellido" required>
+					</div>	
 
-				<div class="input-field2">
-				<input name="correo" type="email" class="validate" placeholder="Correo" required>
-			    </div>
+					<div class="input-field">
+						<input name="apellido2" type="text" class="validate" placeholder="Segundo Apellido">
+						
+					</div>	
 
-				<div class="input-field2">
+					<div class="input-field2">
+						<input name="correo" type="email" class="validate" placeholder="Correo" required>
+					</div>
 
-				<input name="password" type="password" class="validate" placeholder="Contraseña" pattern="[A-Za-z0-9._-]{1,15}" required>
-			    </div>	
+					<div class="input-field2">
 
-				<div class="input-field2">
-					<input name="repassword" type="password" class="validate" placeholder="Confirmar Contraseña" pattern="[A-Za-z0-9._-]{1,15}" required>
-				    </div>	
-	    
-				  <a href="/appsistencia"><button class="btn waves-effect waves-light offset-s3"><i class="large material-icons">arrow_back</a></i></button>
+						<input name="password" type="password" class="validate" placeholder="Contraseña" pattern="[A-Za-z0-9._-]{1,15}" required>
+					</div>	
+
+					<div class="input-field2">
+						<input name="repassword" type="password" class="validate" placeholder="Confirmar Contraseña" pattern="[A-Za-z0-9._-]{1,15}" required>
+					</div>	
+					
+					<a href="/appsistencia"><button class="btn waves-effect waves-light offset-s3"><i class="large material-icons">arrow_back</a></i></button>
 					<button class="btn waves-effect waves-light offset-s3" type="submit" name="action">Registrarse
-			    	<i class="material-icons right">send</i>
-		    
-		  </button>
-		</form>
-        
-	</div>
-	</div>
+						<i class="material-icons right">send</i>
+						
+					</button>
+				</form>
+				
+			</div>
+		</div>
 
 
-</body>
-</html>
+	</body>
+	</html>
