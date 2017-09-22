@@ -1,6 +1,13 @@
 <?php
+	
+	require("Conexion.php");
 
-require("Conexion.php");
+	if(!empty($_POST))
+	{
+		$codigo = mysqli_real_escape_string($_POST['codigo']);
+		$password = mysqli_real_escape_string($_POST['password']);
+
+	}
 
 $_codigo=mysqli_real_escape_string($conexion,trim($_POST["codigo"]));
 $_clave=mysqli_real_escape_string($conexion,trim($_POST["password"]));
@@ -30,10 +37,10 @@ else{
 			   
 			   $control=true;
 			   if (password_verify($_clave,$pass)) {
-						echo "PRUEBA SÍ SE OBTUVO RESULTADO <br><br>";    //SE OBTIENE EL VALOR DE LA BBDD
-						echo "La Contraseña de la BBDD es:  $pass<br><br>";
-						
-					}else{
+				   	$_SESSION["estudiante"]=1;
+					   echo "<script>document.location.href='/appsistencia/Estudiante.php';</script>\n";
+					}
+					else{
 					  echo "<script languaje=\"javascript\">alert('LA CONTRASEÑA ES INCORRECTA');</script>";
 					  echo "<script>document.location.href='/appsistencia';</script>\n";
 				  }
@@ -62,7 +69,7 @@ mysqli_close($conexion);
 </head>
 <body>
 	<section>
-		<form action="<?php echo htmlentities($_SERVER ['PHP_SELF']); ?>" method="post">
+		<form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post">
 			<table align="center">
 				<tr align="right">
 					<td align="right">
