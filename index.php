@@ -9,30 +9,18 @@ if (empty($_codigo)) {
 	echo "<script languaje=\"javascript\">alert('NO HA LLENADO EL CAMPO OBLIGATORIO Digite su Código ');</script>";
 	echo "<script>document.location.href='http://localhost/Software_Registro_Loguin/Index.html';</script>\n";
 }else{
-<<<<<<< HEAD
 	$con1 = "SELECT codigo_udc,contraseña FROM login WHERE codigo_udc=?";
 	
 	$obj1 = mysqli_prepare($conexion, $con1);
 	
 	$ok1 = mysqli_stmt_bind_param($obj1,"s", $_codigo);
-=======
-	$con1="SELECT codigo_udc,contraseña FROM login WHERE codigo_udc=?";
-	
-	$obj1 = mysqli_prepare($conexion, $con1);
-	
-	$ok1 = mysqli_stmt_bind_param($obj1,"s",$_codigo);
->>>>>>> 4b1293186fbffda69dd72938f2484d2e5060207d
-	
 	$ok1 = mysqli_stmt_execute($obj1);
 	
 	if ($ok1 == false) {
 		echo "ERROR EN LA EJECUCIÓN DE ACCESO <br><br>";
 	}else{
-<<<<<<< HEAD
+		<<<<<<< HEAD
 		$ok1 = mysqli_stmt_bind_result($obj1, $usu, $pass);   //VALIDACIÓN DE USUARIO
-=======
-		$ok1=mysqli_stmt_bind_result($obj1,$usu,$pass);   //VALIDACIÓN DE USUARIO
->>>>>>> 4b1293186fbffda69dd72938f2484d2e5060207d
 		while (mysqli_stmt_fetch($obj1)) {
 			$control = true;
 			if (password_verify($_clave, $pass)) {
