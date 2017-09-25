@@ -30,16 +30,19 @@ if (!empty($_POST)){
 		{
 
 		$ok1 = mysqli_stmt_bind_result($obj1, $usu, $pass);   //VALIDACIÓN DE USUARIO
-		while (mysqli_stmt_fetch($obj1)) {
+		if (mysqli_stmt_fetch($obj1)) {
 			$control = true;
 			if (password_verify($_clave, $pass)) {
+				mysqli_stmt_close($obj1);
 				$con2 = "SELECT rol FROM personal WHERE codigo_udc=?";
 				$obj2 = mysqli_prepare($conexion, $con2);
 				$ok2 = mysqli_stmt_bind_param($obj2,"s", $_codigo);
 				$ok2 = mysqli_stmt_execute($obj2);
 				$ok2 = mysqli_stmt_bind_result($obj2, $rol);
-				mysqli_stmt_fetch($obj2);
-				echo $rol;
+				if (mysqli_stmt_fetch($obj2)) {
+					echo $rol;
+				}
+				mysqli_stmt_close($obj2);
 			}
 			else
 			{
