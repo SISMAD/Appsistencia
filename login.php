@@ -1,11 +1,8 @@
 <?php
-
+session_start();
 require("Conexion.php");
 
-if (!empty($_POST)){
-
-	
-
+if (!empty($_POST)) {
 	$_codigo = mysqli_real_escape_string($conexion, trim($_POST["codigo"]));
 	$_clave = mysqli_real_escape_string($conexion, trim($_POST["password"]));
 	$control = false;
@@ -13,25 +10,20 @@ if (!empty($_POST)){
 	if (empty($_codigo)) {
 		echo "<script languaje=\"javascript\">alert('NO HA LLENADO EL CAMPO OBLIGATORIO - Digite su Código ');</script>";
 	//	echo "<script>document.location.href='http://localhost/Software_Registro_Loguin/Index.html';</script>\n";
-	}
-	else
-	{
+	}else{
 		$con1 = "SELECT codigo_udc,contraseña FROM login WHERE codigo_udc=?";
-
 		$obj1 = mysqli_prepare($conexion, $con1);
-
 		$ok1 = mysqli_stmt_bind_param($obj1,"s", $_codigo);
 		$ok1 = mysqli_stmt_execute($obj1);
 
 		if ($ok1 == false) {
 			echo "ERROR EN LA EJECUCIÓN DE ACCESO <br><br>";
-		}
-		else
-		{
-
+		}else{
 		$ok1 = mysqli_stmt_bind_result($obj1, $usu, $pass);   //VALIDACIÓN DE USUARIO
+
 		if (mysqli_stmt_fetch($obj1)) {
 			$control = true;
+
 			if (password_verify($_clave, $pass)) {
 				mysqli_stmt_close($obj1);
 				$con2 = "SELECT rol,nombre1,nombre2,apellido1,apellido2,email FROM personal WHERE codigo_udc=?";
@@ -39,6 +31,7 @@ if (!empty($_POST)){
 				$ok2 = mysqli_stmt_bind_param($obj2,"s", $_codigo);
 				$ok2 = mysqli_stmt_execute($obj2);
 				$ok2 = mysqli_stmt_bind_result($obj2, $rol, $nombre1, $nombre2, $apellido1, $apellido2, $email);
+
 				if (mysqli_stmt_fetch($obj2)) {
 					$_SESSION['codigo'] = $_codigo;
 					$_SESSION['rol'] = $rol;
@@ -47,18 +40,19 @@ if (!empty($_POST)){
 					$_SESSION['apellido1'] = $apellido1;
 					$_SESSION['apellido2'] = $apellido2;
 					$_SESSION['email'] = $email;
+
 					switch ($_SESSION['rol']) {
 						case '1':
-							header('Location: alumno.php');
-							break;
+						header('Location: alumno.php');
+						break;
 						case '2':
-							header('Location: tutor.php');
-							break;
+						header('Location: tutor.php');
+						break;
 						case '3':
-							header('Location: coordinador.php');
+						header('Location: coordinador.php');
 						case '4':
-							header('Location: admin/index.php');
-							break;
+						header('Location: admin/index.php');
+						break;
 					}
 				}
 				mysqli_stmt_close($obj2);
@@ -67,12 +61,29 @@ if (!empty($_POST)){
 				echo "<script>document.location.href='/appsistencia';</script>\n";
 			}
 		}
+
 		if ($control == false) {
 			echo "<script>document.location.href='UsuarioNoExiste.html';</script>\n";
 		}
 	}    
 }
 mysqli_close($conexion);
+
+}elseif (!empty($_SESSION['codigo'])) {
+	switch ($_SESSION['rol']) {
+		case '1':
+		header('Location: alumno.php');
+		break;
+		case '2':
+		header('Location: tutor.php');
+		break;
+		case '3':
+		header('Location: coordinador.php');
+		case '4':
+		header('Location: admin/index.php');
+		break;
+	}
+
 }else{
 	?>
 	<html lang="es" class="mdl-js">
