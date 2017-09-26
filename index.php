@@ -34,18 +34,35 @@ if (!empty($_POST)){
 			$control = true;
 			if (password_verify($_clave, $pass)) {
 				mysqli_stmt_close($obj1);
-				$con2 = "SELECT rol FROM personal WHERE codigo_udc=?";
+				$con2 = "SELECT rol,nombre1,nombre2,apellido1,apellido2,email FROM personal WHERE codigo_udc=?";
 				$obj2 = mysqli_prepare($conexion, $con2);
 				$ok2 = mysqli_stmt_bind_param($obj2,"s", $_codigo);
 				$ok2 = mysqli_stmt_execute($obj2);
-				$ok2 = mysqli_stmt_bind_result($obj2, $rol);
+				$ok2 = mysqli_stmt_bind_result($obj2, $rol, $nombre1, $nombre2, $apellido1, $apellido2, $email);
 				if (mysqli_stmt_fetch($obj2)) {
-					echo $rol;
+					$_SESSION['codigo'] = $_codigo;
+					$_SESSION['rol'] = $rol;
+					$_SESSION['nombre1'] = $nombre1;
+					$_SESSION['nombre2'] = $nombre2;
+					$_SESSION['apellido1'] = $apellido1;
+					$_SESSION['apellido2'] = $apellido2;
+					$_SESSION['email'] = $email;
+					switch ($_SESSION['rol']) {
+						case '1':
+							header('Location: alumno.php');
+							break;
+						case '2':
+							header('Location: tutor.php');
+							break;
+						case '3':
+							header('Location: coordinador.php');
+						case '4':
+							header('Location: admin/index.php');
+							break;
+					}
 				}
 				mysqli_stmt_close($obj2);
-			}
-			else
-			{
+			}else{
 				echo "<script languaje=\"javascript\">alert('LA CONTRASEÑA ES INCORRECTA');</script>";
 				echo "<script>document.location.href='/appsistencia';</script>\n";
 			}
@@ -56,10 +73,7 @@ if (!empty($_POST)){
 	}    
 }
 mysqli_close($conexion);
-}
-else{
-
-
+}else{
 	?>
 	<html lang="es" class="mdl-js">
 	<head>
@@ -83,18 +97,18 @@ else{
 					</tr>
 				</table>
 				<STYLE type="text/css">
-				div.parrafos {text-align: center}
-			</STYLE>
-			<table align="center">
-				<h2 align="center">APPSISTENCIA</h2>
-				<div class="parrafos">
-					<br></br>
-					<input type="number" name="codigo" pattern="[0-9]{1,15}" placeholder="Codigo" title="Ej. 4150510000" required>
-					<br></br>
-					<input type="password" name="password" pattern="[A-Za-z0-9._-]{1,15}" required placeholder="Contraseña" title="Digita una contraseña" required>
-					<br></br>
-					<a href="registro.html"><input type="button" value="Registrarse" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"></a>
-					<!-- <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" title="Registrarse"> -->
+					div.parrafos {text-align: center}
+				</STYLE>
+				<table align="center">
+					<h2 align="center">APPSISTENCIA</h2>
+					<div class="parrafos">
+						<br></br>
+						<input type="number" name="codigo" pattern="[0-9]{1,15}" placeholder="Codigo" title="Ej. 4150510000" required>
+						<br></br>
+						<input type="password" name="password" pattern="[A-Za-z0-9._-]{1,15}" required placeholder="Contraseña" title="Digita una contraseña" required>
+						<br></br>
+						<a href="registro.html"><input type="button" value="Registrarse" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"></a>
+						<!-- <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" title="Registrarse"> -->
 					</button>
 				</a>
 				<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" type="submit" name="Enviar" title="Ingresar">Conectarse</button>
