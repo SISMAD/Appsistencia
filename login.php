@@ -9,7 +9,6 @@ if (!empty($_POST)) {
 
 	if (empty($_codigo)) {
 		echo "<script languaje=\"javascript\">alert('NO HA LLENADO EL CAMPO OBLIGATORIO - Digite su Código ');</script>";
-	//	echo "<script>document.location.href='http://localhost/Software_Registro_Loguin/Index.html';</script>\n";
 	}else{
 		$con1 = "SELECT codigo_udc,contraseña FROM login WHERE codigo_udc=?";
 		$obj1 = mysqli_prepare($conexion, $con1);
@@ -93,7 +92,6 @@ mysqli_close($conexion);
 		<meta name="Appsistencia" content="Control de asistencia de las tutorias de los docentes">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 		<link rel="stylesheet" href="css/mdl/material.min.css">
-		<script src="css/mdl/material.min.js"></script>
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 		<title>Appsistencia</title>
 	</head>
@@ -114,16 +112,16 @@ mysqli_close($conexion);
 					<h2 align="center">APPSISTENCIA</h2>
 					<div class="parrafos">
 						<br></br>
-						<input type="number" name="codigo" pattern="[0-9]{1,15}" placeholder="Codigo" title="Ej. 4150510000" required>
+						<input type="tel" name="codigo" pattern="[0-9]{1,15}" placeholder="Ej. 4150510000" data-toggle="tooltip" title="Ej. 4150510000" required autofocus>
 						<br></br>
 						<input type="password" name="password" pattern="[A-Za-z0-9._-]{1,15}" required placeholder="Contraseña" title="Digita una contraseña" required>
 						<br></br>
 						<a href="registro.html"><input type="button" value="Registrarse" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"></a>
-						<!-- <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" title="Registrarse"> -->
 					</button>
 				</a>
 				<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" type="submit" name="Enviar" title="Ingresar">Conectarse</button>
-				<h5><a href="#">¿Olvidaste contraseña?</a></h5>
+				<br><br>
+				<a href="#">¿Olvidaste contraseña?</a>
 			</table>
 		</form>                      
 	</section>
