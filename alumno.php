@@ -11,7 +11,8 @@ if (isset($_SESSION['rol']) && $_SESSION['rol'] == 1 && !empty($_POST)) {
 }else{
 ?>
 <html>
-<!-- Codigo HTML del dashboard alumno -->
+<h1>¡Bienvenido Alumno!</h1>
+<a href="cerrar_sesion.php">CERRAR SESION</a>
 </html>
 <?php
 }
