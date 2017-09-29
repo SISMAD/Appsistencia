@@ -3,7 +3,7 @@ session_start();
 if (isset($_SESSION['rol'])) {
 	switch ($_SESSION['rol']) {
 		case '1':
-		header('Location: alumno.php');
+		header('Location: estudiante.php');
 		break;
 		case '2':
 		header('Location: tutor.php');

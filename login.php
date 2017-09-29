@@ -42,7 +42,7 @@ if (!empty($_POST)) {
 
 					switch ($_SESSION['rol']) { // Redirecciona a su plataforma correspondiente segun su Rol
 						case '1':
-						header('Location: alumno.php');
+						header('Location: estudiante.php');
 						break;
 						case '2':
 						header('Location: tutor.php');
@@ -71,7 +71,7 @@ mysqli_close($conexion);
 }elseif (!empty($_SESSION['codigo'])) {  	//Validacion si la sesion ya existe y al usuario se le da por ir 'Atras'
 	switch ($_SESSION['rol']) {
 		case '1':
-		header('Location: alumno.php');
+		header('Location: estudiante.php');
 		break;
 		case '2':
 		header('Location: tutor.php');
