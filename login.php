@@ -86,46 +86,40 @@ mysqli_close($conexion);
 
 }else{
 	?>
-	<html lang="es" class="mdl-js">
+	<html lang="es">
 	<head>
-		<meta charset="utf-8"> 
+	<link rel="stylesheet" href="css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+	<script src="js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+	<meta charset="utf-8"> 
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="Appsistencia" content="Control de asistencia de las tutorias de los docentes">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-		<link rel="stylesheet" href="css/mdl/material.min.css">
-		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 		<title>Appsistencia</title>
 	</head>
 	<body>
-		<section>
+	<div class="row slideanim">
+	<div class="container">
+	<div class="col-sm-4 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
 			<form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post">
-				<table align="center">
-					<tr align="right">
-						<td align="right">
-							<img src="images/user.png" width="180" height="180">
-						</td>
-					</tr>
-				</table>
-				<STYLE type="text/css">
-					div.parrafos {text-align: center}
-				</STYLE>
-				<table align="center">
-					<h2 align="center">APPSISTENCIA</h2>
-					<div class="parrafos">
-						<br></br>
-						<input type="tel" name="codigo" pattern="[0-9]{1,15}" placeholder="Ej. 4150510000" data-toggle="tooltip" title="Ej. 4150510000" required autofocus>
-						<br></br>
-						<input type="password" name="password" pattern="[A-Za-z0-9._-]{1,15}" required placeholder="Contraseña" title="Digita una contraseña" required> <!-- Validar los caracteres especiales -->
-						<br></br>
-						<a href="registro.html"><input type="button" value="Registrarse" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect"></a>
-					</button>
-				</a>
-				<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect" type="submit" name="Enviar" title="Ingresar">Conectarse</button>
-				<br><br>
-				<a href="#">¿Olvidaste contraseña?</a>
-			</table>
-		</form>                      
-	</section>
+				<img src="images/user.png" width="180" height="180">
+				<h2 class="label-3" align="center">APPSISTENCIA</h2>
+		</div>
+		<div class="panel-body">
+			<p><input type="tel" name="codigo" pattern="[0-9]{1,15}" placeholder="Ej. 4150510000" data-toggle="tooltip" title="Ej. 4150510000" required autofocus></p>
+			<p><input type="password" name="password" pattern="[A-Za-z0-9._-]{1,15}" required placeholder="Contraseña" title="Digita una contraseña" required></p> <!-- Validar los caracteres especiales -->
+		</div>
+		<div class="panel-footer">
+			<a href="registro.html"><input type="button" value="Registrarse" ></a></button>
+			<button type="submit" name="Enviar" title="Ingresar">Conectarse</button>
+			<a href="#">¿Olvidaste contraseña?</a>
+		</div>
+			</form>
+		</div>
+		</div>                      
+	</div>
+	</div>
 </body>
 </html>
 <?php 
