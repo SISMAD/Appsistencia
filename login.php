@@ -62,7 +62,7 @@ if (!empty($_POST)) {
 		}
 
 		if ($control == false) {
-			echo "<script>document.location.href='UsuarioNoExiste.html';</script>\n";
+			header('Location: Error.html');
 		}
 	}    
 }
@@ -88,37 +88,36 @@ mysqli_close($conexion);
 	?>
 	<html lang="es">
 	<head>
-	<link rel="stylesheet" href="css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-	<script src="js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<meta charset="utf-8"> 
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="Appsistencia" content="Control de asistencia de las tutorias de los docentes">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
 		<title>Appsistencia</title>
 	</head>
-	<body>
-	<div class="row slideanim">
-	<div class="container">
-	<div class="col-sm-4 col-xs-12">
-      <div class="panel panel-default text-center">
-        <div class="panel-heading">
-			<form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post">
-				<img src="images/user.png" width="180" height="180">
-				<h2 class="label-3" align="center">APPSISTENCIA</h2>
-		</div>
-		<div class="panel-body">
-			<p><input type="tel" name="codigo" pattern="[0-9]{1,15}" placeholder="Ej. 4150510000" data-toggle="tooltip" title="Ej. 4150510000" required autofocus></p>
-			<p><input type="password" name="password" pattern="[A-Za-z0-9._-]{1,15}" required placeholder="Contraseña" title="Digita una contraseña" required></p> <!-- Validar los caracteres especiales -->
-		</div>
-		<div class="panel-footer">
-			<a href="registro.html"><input type="button" value="Registrarse" ></a></button>
-			<button type="submit" name="Enviar" title="Ingresar">Conectarse</button>
-			<a href="#">¿Olvidaste contraseña?</a>
-		</div>
-			</form>
-		</div>
-		</div>                      
-	</div>
+	<body><br><br>
+	<div class="container center-block text-center" style="min-width: 280; max-width: 340">
+		<div class="panel-group">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+			  		<img src="images/user.png" width="180" height="180"/><br>
+			  		<h2>APPSISTENCIA</h2>
+				</div>
+  			<div class="panel-body">
+		  	<form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post">
+				  <p><input type="tel" name="codigo" pattern="[0-9]{1,15}" placeholder="Ej. 4150510000" data-toggle="tooltip" title="Ej. 4150510000" required autofocus></p>
+				  <p><input type="password" name="password" pattern="[A-Za-z0-9._-]{1,15}" required placeholder="Contraseña" title="Digita una contraseña" required></p> <!-- Validar los caracteres especiales -->
+				  <a href="registro.html"><input type="button" class="btn btn-default" value="Registrarse"></a>
+				  <button type="submit" class="btn btn-default" name="Enviar" title="Ingresar">Conectarse</button>
+				  <br><br><a href="#"><h5>¿Olvidaste contraseña?</h4></a>
+			  </form>
+			  <img src="images/sismad.png" alt="Semillero de Investigacion de Ingenieria de Sistemas Modalidad a Distancia" width="32" height="36">
+			  <p><h5>SISMAD</h5></p>
+			   </div>
+			</div>
+	  	</div>
 	</div>
 </body>
 </html>

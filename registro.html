@@ -1,84 +1,58 @@
 <!DOCTYPE html>
 <html>
 <head>
-
 	<meta charset="utf-8">
-	
-	<!-- Compiled and minified CSS -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-
-	<!-- Compiled and minified JavaScript -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-	
-	<!--Import Google Icon Font-->
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-	<script
-	src="https://code.jquery.com/jquery-3.2.1.min.js"
-	integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-	crossorigin="anonymous">
-</script>
-
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <title>Registro de Estudiantes</title>
-
 </head>
 
-<body>
-
-
-	<div class="container">
-
-		<div class="card-panel s2">
-			<div class="row">
-				<h3 class="center-align">Registrar estudiante</h3>
-				<div class="input-field">
-					
-					<form method="post" name="form_register" action="Registro.php" >
-
-						<div class="input-field">
-							<input name="codigo" type="tel" class="validate" placeholder="Ej. 4150510000" pattern="[0-9]{1,15}" data-toggle="tooltip" title="Ej. 4150510000" required autofocus>
+<body><br><br>
+		<div class="container center-block text-center" style="min-width: 280; max-width: 380">
+				<div class="panel-group">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							  <img src="images/sismad.png" width="38" height="42"/><br>
+							  <h3>REGISTRO DE ESTUDIANTES</h3>
 						</div>
-
-						<input name="nombre1" type="text" class="validate" placeholder="Primer Nombre" required>
-						
+					  <div class="panel-body">
+						<form method="post" name="form_register" action="Registro.php">
+							<div class="form-group">
+								<input name="codigo" type="tel" class="validate" placeholder="Ej. 4150510000" pattern="[0-9]{1,15}" data-toggle="tooltip" title="Ej. 4150510000" required autofocus class="form-control">
+							</div>
+							<div class="form-group">
+								<input name="nombre1" type="text" class="validate" placeholder="Primer Nombre" required class="form-control">
+							</div>
+							<div class="form-group">
+								<input name="nombre2" type="text" class="validate" placeholder="Segundo Nombre" class="form-control">
+							</div>
+							<div class="form-group">
+								<input name="apellido1" type="text" class="validate" placeholder="Primer Apellido" required class="form-control">
+							</div>
+							<div class="form-group">
+								<input name="apellido2" type="text" class="validate" placeholder="Segundo Apellido" class="form-control">
+							</div>
+							<div class="form-group">
+								<input name="correo" type="email" class="validate" placeholder="Correo" required class="form-control">
+							</div>
+							<div class="form-group">
+								<input name="password" type="password" class="validate" placeholder="Contraseña" pattern="[A-Za-z0-9._-]{1,15}" required class="form-control">
+							</div>
+							<div class="form-group">
+								<input name="repassword" type="password" class="validate" placeholder="Confirmar Contraseña" pattern="[A-Za-z0-9._-]{1,15}" required class="form-control">
+							</div>
+		
+							<a href="/Appsistencia"><input type="button" class="btn btn-default" value="Volver"></a>
+							<button type="submit" class="btn btn-default" name="Enviar" title="Ingresar">Registrarse</button>
+							
+						</form>
+						<label for="mensaje" class="text-right"><br><br><br>Campo de registro solo para Estudiantes</label>
+					   </div>
 					</div>
-
-					<div class="input-field">
-						<input name="nombre2" type="text" class="validate" placeholder="Segundo Nombre">
-					</div>
-					
-					<div class="input-field">
-						<input name="apellido1" type="text" class="validate" placeholder="Primer Apellido" required>
-					</div>	
-
-					<div class="input-field">
-						<input name="apellido2" type="text" class="validate" placeholder="Segundo Apellido">
-						
-					</div>	
-
-					<div class="input-field2">
-						<input name="correo" type="email" class="validate" placeholder="Correo" required>
-					</div>
-
-					<div class="input-field2">
-
-						<input name="password" type="password" class="validate" placeholder="Contraseña" pattern="[A-Za-z0-9._-]{1,15}" required>
-					</div>	
-
-					<div class="input-field2">
-						<input name="repassword" type="password" class="validate" placeholder="Confirmar Contraseña" pattern="[A-Za-z0-9._-]{1,15}" required>
-					</div>	
-					
-					<a href="/appsistencia"><button class="btn waves-effect waves-light offset-s3"><i class="large material-icons">arrow_back</a></i></button>
-					<button class="btn waves-effect waves-light offset-s3" type="submit" name="action">Registrarse
-						<i class="material-icons right">send</i>
-						
-					</button>
-				</form>
-				
-			</div>
+				  </div>
 		</div>
 
+</body>
 
-	</body>
-	</html>
+</html>

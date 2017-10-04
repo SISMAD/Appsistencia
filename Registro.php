@@ -45,10 +45,8 @@ if (empty($_POST["Enviar_fer"])) {
 					echo "<script languaje=\"javascript\">alert('ERROR AL EJECUTAR EL REGISTRO');</script>";
 				}
 				else{
-					echo "<script languaje=\"javascript\">alert('REGISTRO EXITOSO');</script>";
-					echo "<script>document.location.href='/appsistencia';</script>\n";
-
-				}
+					header('Location: UserRegistred.html');
+					}
 			}
 		}
 			mysqli_close($conexion);
