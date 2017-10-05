@@ -105,16 +105,24 @@ mysqli_close($conexion);
 			  		<img src="images/user.png" width="180" height="180"/><br>
 			  		<h2>APPSISTENCIA</h2>
 				</div>
+				
   			<div class="panel-body">
-		  	<form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post">
-				  <p><input type="tel" name="codigo" pattern="[0-9]{1,15}" placeholder="Ej. 4150510000" data-toggle="tooltip" title="Ej. 4150510000" required autofocus></p>
-				  <p><input type="password" name="password" pattern="[A-Za-z0-9._-]{1,15}" placeholder="Contraseña" title="Digita una contraseña" required></p> <!-- Validar los caracteres especiales -->
-				  <a href="registro.html"><input type="button" class="btn btn-default" value="Registrarse"></a>
-				  <button type="submit" class="btn btn-default" name="Enviar" title="Ingresar">Conectarse</button>
-				  <br><br><a href="#"><h5>¿Olvidaste contraseña?</h4></a>
+			  <form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post">
+						  
+			  			<div class="form-group">
+							<input name="codigo" type="tel" class="validate" placeholder="Ej. 4150510000" pattern="[0-9]{1,15}" data-toggle="tooltip" title="Ej. 4150510000" required autofocus class="form-control">
+						</div>
+
+						<div class="form-group">
+							<input name="password" type="password" class="validate" placeholder="Contraseña" pattern="[A-Za-z0-9._-]{1,15}" required class="form-control">
+						</div>
+						
+						<a href="registro.html"><input type="button" class="btn btn-default" value="Registrarse"></a>
+						<button type="submit" class="btn btn-default" name="Enviar" title="Ingresar">Conectarse</button>
+				  		<br><br><a href="#"><h5>¿Olvidaste contraseña?</h4></a>
 			  </form>
-			  <img src="images/sismad.png" alt="Semillero de Investigacion de Ingenieria de Sistemas Modalidad a Distancia" width="32" height="36">
-			  <p><h5>SISMAD</h5></p>
+						<img src="images/sismad.png" alt="Semillero de Investigacion de Ingenieria de Sistemas Modalidad a Distancia" width="32" height="36">
+						<p><h5>SISMAD</h5></p>
 			   </div>
 			</div>
 	  	</div>
