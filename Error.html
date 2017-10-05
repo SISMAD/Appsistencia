@@ -1,21 +1,30 @@
-<!DOCTYPE html>
-<html>
-<title>W3.CSS</title>
 <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#myModal").modal('show');
+	});
+</script>
 <body>
-<div class="container"> <!-- AVISO ERROR (Contraseña Incorrecta) -->
-  <div class="panel-group">
-    <div class="panel panel-danger">
-      <div class="panel-heading">¡CONTRASEÑA INCORRECTA!</div>
-      <div class="panel-body">Por favor, verifique e intente nuevamente<br>
-          <button class="btn btn-default"><a href="/Appsistencia">Volver</a></button>
-      </div>
+<div id="myModal" class="modal fade">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title"><strong>Contraseña Incorrecta!</strong></h4>
+            </div>
+            <div class="modal-body">
+                <div class="alert alert-danger alert-dismissable">
+                     Por favor, Verifique e intente nuevamente.
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default"><a href="/Appsistencia">Close</a></button>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 </body>
-</html>

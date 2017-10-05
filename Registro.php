@@ -28,8 +28,7 @@ if (empty($_POST["Enviar_fer"])) {
 			$fila = mysqli_fetch_row($resultado);
 			if ($fila > 0) 
 			{
-				echo "<script languaje=\"javascript\">alert('YA EXISTE ESE CÓDIGO');</script>";
-				echo "<script>document.location.href='registro.html';</script>\n";
+				header('Location: exits.html'); //USUARIO YA EXISTE
 			}
 			else{
 				$sql1="CALL registro_personal(?,?,?,?,?,?,?)";
@@ -45,7 +44,7 @@ if (empty($_POST["Enviar_fer"])) {
 					echo "<script languaje=\"javascript\">alert('ERROR AL EJECUTAR EL REGISTRO');</script>";
 				}
 				else{
-					header('Location: UserRegistred.html');
+					header('Location: UserRegistred.html'); //USUARIO REGISTRADO
 					}
 			}
 		}

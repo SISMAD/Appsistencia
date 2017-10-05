@@ -108,7 +108,7 @@ mysqli_close($conexion);
   			<div class="panel-body">
 		  	<form action="<?php echo htmlentities($_SERVER['PHP_SELF']); ?>" method="post">
 				  <p><input type="tel" name="codigo" pattern="[0-9]{1,15}" placeholder="Ej. 4150510000" data-toggle="tooltip" title="Ej. 4150510000" required autofocus></p>
-				  <p><input type="password" name="password" pattern="[A-Za-z0-9._-]{1,15}" required placeholder="Contraseña" title="Digita una contraseña" required></p> <!-- Validar los caracteres especiales -->
+				  <p><input type="password" name="password" pattern="[A-Za-z0-9._-]{1,15}" placeholder="Contraseña" title="Digita una contraseña" required></p> <!-- Validar los caracteres especiales -->
 				  <a href="registro.html"><input type="button" class="btn btn-default" value="Registrarse"></a>
 				  <button type="submit" class="btn btn-default" name="Enviar" title="Ingresar">Conectarse</button>
 				  <br><br><a href="#"><h5>¿Olvidaste contraseña?</h4></a>
